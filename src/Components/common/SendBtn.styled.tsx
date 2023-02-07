@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../assets/breackPoints";
 import { Colors } from "../../assets/Colors";
 
 interface Props {
@@ -18,5 +19,9 @@ export const SendBtn = styled.button<Props>`
  
  :active{
     opacity:0.8 ;
-}
+  }
+
+  @media ${device.tablet} {
+    font-size:1.3rem;
+  }
  `

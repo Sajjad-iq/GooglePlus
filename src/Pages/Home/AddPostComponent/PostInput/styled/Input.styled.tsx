@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../../../assets/breackPoints";
 
 export const Input = styled.input`
  width: 100%;
@@ -11,4 +12,8 @@ export const Input = styled.input`
  :focus {
   outline: none;
 }
+
+@media ${device.tablet} {
+    font-size:1.3rem;
+  }
 `

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../../../assets/breackPoints";
 
 export const TextAreaComponent = styled.textarea`
  width: 100%;
@@ -14,4 +15,8 @@ export const TextAreaComponent = styled.textarea`
  &:focus {
    outline: none;
  }
+
+ @media ${device.tablet} {
+ font-size:1.4rem;
+  }
 `

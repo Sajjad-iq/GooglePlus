@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../assets/breackPoints";
 interface Props {
     display: string
 }
@@ -15,5 +16,8 @@ export const AsideWrapper = styled.aside<Props>`
  left:0;
  z-index:11;
 
+  @media ${device.tablet} {
+     width: 300px;
+    }
 
 `

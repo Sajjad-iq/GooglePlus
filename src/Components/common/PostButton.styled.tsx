@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../assets/breackPoints";
 interface Props {
     color: string
     backgroundColor: string
@@ -17,5 +18,11 @@ export const PostButton = styled.button<Props>`
  border-radius:100% ;
  font-family: 'Raleway', sans-serif;
  font-weight: 600;
+ 
+ @media ${device.tablet} {
+    font-size:2rem;
+    height: 50px;
+    width: 50px;
+  }
 
 `

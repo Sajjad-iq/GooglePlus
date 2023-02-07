@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Colors } from '../../../../assets/Colors'
 import { Count } from '../../../../Components/common/Count.styled'
 import { PostButton } from '../../../../Components/common/PostButton.styled'

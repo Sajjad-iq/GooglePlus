@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../assets/breackPoints";
 
 export const SplitWrapper = styled.section`
  width: 100%;
@@ -9,5 +10,9 @@ export const SplitWrapper = styled.section`
  padding-top:57px;
  padding-bottom:55px;
 
+  @media ${device.tablet} {
+    padding-top:64px;
+    padding-bottom:65px;
+    }
 
 `
