@@ -10,15 +10,15 @@ export const SplitWrapper = styled.section`
  position: relative;
  padding-top:57px;
  padding-bottom:55px;
+ background-color:${Colors.Primary.white} ;
 
   @media ${device.tablet} {
     padding-top:64px;
     padding-bottom:65px;
     }
     @media ${device.laptop} {
-    padding-top:67px;
+    padding-top:69px;
     padding-bottom:0px;
-    background-color:${Colors.Primary.background} ;
 
     }
 

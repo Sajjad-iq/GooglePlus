@@ -25,12 +25,12 @@ export const Home = () => {
                 >
                     <Masonry >
                         <AddPostComponent IsActive={IsPostsActive} OpenFunction={Toggle} />
-                        <Post key={1} onClick={ActivePostsToggle} />
-                        <Post key={2} onClick={ActivePostsToggle} />
-                        <Post key={3} onClick={ActivePostsToggle} />
-                        <Post key={4} onClick={ActivePostsToggle} />
-                        <Post key={5} onClick={ActivePostsToggle} />
-                        <Post key={6} onClick={ActivePostsToggle} />
+                        <Post IsPostPreview={false} key={1} onClick={ActivePostsToggle} />
+                        <Post IsPostPreview={false} key={2} onClick={ActivePostsToggle} />
+                        <Post IsPostPreview={false} key={3} onClick={ActivePostsToggle} />
+                        <Post IsPostPreview={false} key={4} onClick={ActivePostsToggle} />
+                        <Post IsPostPreview={false} key={5} onClick={ActivePostsToggle} />
+                        <Post IsPostPreview={false} key={6} onClick={ActivePostsToggle} />
                     </Masonry>
                 </ResponsiveMasonry >
             </PostToggleSection>

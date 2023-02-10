@@ -11,7 +11,7 @@ export const LogoAndPage = () => {
                 <LOGO>Google +</LOGO>
             </BorderSection>
 
-            <BorderSection borderLeft='1px solid white'>
+            <BorderSection borderLeft='1px solid black'>
                 <PageName>Home</PageName>
             </BorderSection>
         </Wrapper>

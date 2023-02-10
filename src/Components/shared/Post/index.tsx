@@ -16,12 +16,13 @@ import { UserLogo } from "../../common/UserLogo.styled"
 
 interface Props {
     onClick: MouseEventHandler<HTMLSelectElement>
+    IsPostPreview: boolean
 }
 
 export const Post = (props: Props) => {
 
     return (
-        <PostWrapper >
+        <PostWrapper IsPostPreview={props.IsPostPreview}>
             <Row padding="10px" align="space-between" width="100%">
                 <Row padding="0" align="center" width="auto">
                     <UserLogo src={UserIcon} alt="User Photo" />

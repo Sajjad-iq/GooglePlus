@@ -5,7 +5,7 @@ import { Colors } from "../../../../../assets/Colors";
 export const PageName = styled.h1`
 font-size: 1.1rem;
 font-weight: 500;
-color:${Colors.Primary.white};
+color:${Colors.Secoundry.gray};
 font-family: 'Raleway', sans-serif;
 
        @media ${device.tablet} {

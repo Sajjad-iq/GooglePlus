@@ -36,6 +36,11 @@
     color: rgb(198, 62, 62);
 }
 
+.NAV {
+    padding: 0;
+    color: gray;
+}
+
 @media(min-width:768px) {
     .name {
         font-size: 1.2rem;

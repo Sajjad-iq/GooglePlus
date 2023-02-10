@@ -20,11 +20,11 @@ export const AsideWrapper = styled.aside<Props>`
   @media ${device.tablet} {
      width: 300px;
     }
-  @media ${device.laptop} {
+ @media ${device.laptop} {
     position: static;
     width: 250px;
     border:none;
-    background-color: ${Colors.Primary.background};
+    display:flex;
     }
 
 `

@@ -15,7 +15,7 @@ export const PostPreviewWindow = (props: Props) => {
             <Row width='100%' align='flex-start' padding='10px'>
                 <BackButton onClick={props.BackHandler} />
             </Row>
-            <Post onClick={() => ""} />
+            <Post IsPostPreview={true} onClick={() => ""} />
             <PostComments />
         </ToggleColumn>
     )

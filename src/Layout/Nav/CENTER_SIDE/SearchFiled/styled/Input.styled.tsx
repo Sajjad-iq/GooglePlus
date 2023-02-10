@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { device } from "../../../../../assets/breackPoints";
+import { Colors } from "../../../../../assets/Colors";
 
 export const Input = styled.input`
   width: 500px;
@@ -8,7 +9,7 @@ export const Input = styled.input`
   border: none;
   border-radius: 3px;
   display: none;
-  background-color: rgb(241, 99, 99);
+  background-color: ${Colors.Primary.Lightgray};
   font-family: 'Raleway', sans-serif;
 
   &:focus{
@@ -17,5 +18,6 @@ export const Input = styled.input`
   
   @media(${device.laptop}){
     display: flex;
+    width:55%;
   }
 `

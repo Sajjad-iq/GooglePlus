@@ -18,7 +18,7 @@ export const NavButton = (props: Props) => {
             className={`link-button ${props.CLass}`}
         >
             <FontAwesomeIcon className='fa-icon' icon={props.ICON} />
-            <p className={`name ${props}`}>{props.Name}</p>
+            <p className={`name ${props.CLass}`}>{props.Name}</p>
 
         </NavLink>)
 }

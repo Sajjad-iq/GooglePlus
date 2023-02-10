@@ -18,6 +18,6 @@ export const ToggleColumn = styled.section<Props>`
  @media(${device.laptop}){
     width:75%;
     background-color: white ;
-
+    border:1px solid gray;
   }
 `

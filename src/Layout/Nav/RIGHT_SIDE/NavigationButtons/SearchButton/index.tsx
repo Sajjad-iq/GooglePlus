@@ -1,11 +1,12 @@
-import { Icon } from './styled/Icon.styled'
-import SearchIcon from "../../../../../assets/ICONS/search_white_48dp.svg"
 import { SearchBtn } from './styled/SearchBtn.styled'
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 export const SearchButton = () => {
     return (
         <SearchBtn>
-            <Icon src={SearchIcon} alt='search button' />
+            <FontAwesomeIcon className='fa-icon' icon={faMagnifyingGlass} />
         </SearchBtn>
     )
 }

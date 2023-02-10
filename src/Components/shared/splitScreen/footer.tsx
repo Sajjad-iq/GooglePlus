@@ -6,7 +6,6 @@ export const Footer = styled.footer`
  height: fit-content;
  position:fixed;
  bottom:0;
- z-index:11;
  display: flex;
  justify-content: center;
  align-items: center;

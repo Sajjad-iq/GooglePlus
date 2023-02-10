@@ -1,7 +1,7 @@
 import { Button } from "../../../../Components/common/Button.styled"
-import { MenuImg } from "./styled/MenuImg.styled"
-import MenuIcon from '../../../../assets/ICONS/menu_white_48dp.svg'
 import { MouseEventHandler } from "react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 interface Props {
     onClick: MouseEventHandler<HTMLButtonElement>
@@ -10,7 +10,7 @@ interface Props {
 export const MenuButton = (props: Props) => {
     return (
         <Button onClick={props.onClick}>
-            <MenuImg src={MenuIcon} alt='btn' />
+            <FontAwesomeIcon className='fa-icon' icon={faBars} />
         </Button>
     )
 }

@@ -1,21 +1,28 @@
 import styled from "styled-components";
 import { device } from "../../../../assets/breackPoints";
 
-export const PostWrapper = styled.section`
+interface Props {
+  IsPostPreview: boolean
+}
+export const PostWrapper = styled.section<Props>`
  width: 100%;
  display: flex;
  justify-content: center;
  align-items: center;
  background-color: white;
  flex-direction: column;
- border:none;
- border:1px solid rgb(201, 201, 201);
  transform: 3s;
-z-index:10;
+ box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-
- @media ${device.laptop} {
+ ${p => p.IsPostPreview ?
+    `@media ${device.laptop} {
+   width: 100%;
+   margin:0;
+  }`
+    :
+    `@media ${device.laptop} {
    width: 95%;
    margin:10px;
+  }`
   }
  `
