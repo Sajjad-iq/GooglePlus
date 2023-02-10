@@ -11,8 +11,11 @@ export const BorderSection = styled.section<Props>`
  border-left: ${p => p.borderLeft};
  padding:0 ;
 
- @media ${device.mobileS} {
+ @media (min-width:320px) and (max-width:1024px) {
     border-left:unset;
   }
- 
+  @media(${device.laptop}){
+     padding:0 10px  ;
+  }
+  
 `

@@ -12,4 +12,8 @@ export const Text = styled.article`
     font-size:1.3rem;
     line-height: 23px;
   }
+  @media ${device.laptop} {
+    font-size:1rem;
+    line-height: 23px;
+  }
 `

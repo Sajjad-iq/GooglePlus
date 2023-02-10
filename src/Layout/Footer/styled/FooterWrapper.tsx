@@ -13,5 +13,8 @@ export const FooterWrapper = styled.footer`
    @media ${device.tablet} {
     width: 90%;
     }
+    @media(${device.laptop}){
+    display: none;
+  }
 
 `

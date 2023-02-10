@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../assets/breackPoints";
 import { Colors } from "../../assets/Colors";
 
 export const NavWrapper = styled.nav`
@@ -9,4 +10,8 @@ export const NavWrapper = styled.nav`
  background-color:${Colors.Primary.red} ;
  padding:12.5px 0px;
  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
+ @media(${device.laptop}){
+ box-shadow:unset;
+  }
 `

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../../../../assets/breackPoints";
 
 export const UserButton = styled.button`
 border: none;
@@ -9,4 +10,7 @@ display: none;
 justify-content: center;
 align-items: center;
 
+@media(${device.laptop}){
+    display: flex;
+  }
 `

@@ -5,6 +5,5 @@ export const LeftSide = styled.section`
  height:100%;
  display:flex;
  position: relative;
- @media ${device.tablet} {
-  }
+  
 `

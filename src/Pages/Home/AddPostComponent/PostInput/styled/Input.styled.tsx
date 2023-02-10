@@ -16,4 +16,7 @@ export const Input = styled.input`
 @media ${device.tablet} {
     font-size:1.3rem;
   }
+  @media ${device.laptop} {
+    font-size:1rem;
+  }
 `

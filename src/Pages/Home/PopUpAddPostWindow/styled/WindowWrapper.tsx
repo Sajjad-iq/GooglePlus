@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../../assets/breackPoints";
 
 interface Props {
     display: string;
@@ -14,5 +15,9 @@ export const WindowWrapper = styled.section<Props>`
  position:absolute;
  top:0;
  z-index:11;
+
+  @media(${device.laptop}){
+    padding-top:25px;
+  }
 
 `

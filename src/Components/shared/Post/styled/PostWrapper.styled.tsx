@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../../../assets/breackPoints";
 
 export const PostWrapper = styled.section`
  width: 100%;
@@ -12,7 +13,9 @@ export const PostWrapper = styled.section`
  transform: 3s;
 z-index:10;
 
- &:active{
-      opacity:0.8 ;
- }
+
+ @media ${device.laptop} {
+   width: 95%;
+   margin:10px;
+  }
  `

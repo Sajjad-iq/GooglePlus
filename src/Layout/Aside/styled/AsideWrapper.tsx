@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { device } from "../../../assets/breackPoints";
+import { Colors } from "../../../assets/Colors";
 interface Props {
-    display: string
+  display: string
 }
 export const AsideWrapper = styled.aside<Props>`
  width: 200px;
@@ -18,6 +19,12 @@ export const AsideWrapper = styled.aside<Props>`
 
   @media ${device.tablet} {
      width: 300px;
+    }
+  @media ${device.laptop} {
+    position: static;
+    width: 250px;
+    border:none;
+    background-color: ${Colors.Primary.background};
     }
 
 `

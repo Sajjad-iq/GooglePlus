@@ -1,6 +1,6 @@
-import { Column } from '../../../../../Components/shared/Column.styled'
 import { SingleComment } from '../../../../../Components/shared/SingleCommint'
 import UserImage from '../../../../../assets/ICONS/ProfileImg.jpg'
+import { Column } from '../../../../../Components/shared/Column.styled'
 
 export const PostComments = () => {
     return (

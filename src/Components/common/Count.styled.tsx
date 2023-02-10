@@ -14,4 +14,7 @@ export const Count = styled.p`
     margin:10px;
 
   }
+  @media ${device.tablet} {
+    font-size:1.4rem;
+  }
 `

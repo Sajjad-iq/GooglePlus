@@ -10,6 +10,7 @@ display: none;
 justify-content: center;
 align-items: center;
 
-@media ${device.tablet} {
+@media(${device.laptop}){
+    display: flex;
   }
 `

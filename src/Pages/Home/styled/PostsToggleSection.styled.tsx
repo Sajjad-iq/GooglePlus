@@ -7,8 +7,4 @@ export const PostToggleSection = styled.section<Props>`
  width: 100%;
  height: 100%;
  display: ${p => p.display};
- justify-content: center;
- align-items: flex-start;
- flex-wrap: wrap;
-
 `

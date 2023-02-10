@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { device } from "../../../assets/breackPoints";
+import { Colors } from "../../../assets/Colors";
 
 export const SplitWrapper = styled.section`
  width: 100%;
@@ -13,6 +14,12 @@ export const SplitWrapper = styled.section`
   @media ${device.tablet} {
     padding-top:64px;
     padding-bottom:65px;
+    }
+    @media ${device.laptop} {
+    padding-top:67px;
+    padding-bottom:0px;
+    background-color:${Colors.Primary.background} ;
+
     }
 
 `

@@ -9,4 +9,7 @@ export const UserLogo = styled.img`
 @media ${device.tablet} {
     width: 55px;
   }
+  @media ${device.laptop} {
+    width: 45px;
+  }
 `

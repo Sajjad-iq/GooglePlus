@@ -9,6 +9,8 @@ color:${Colors.Primary.white};
 font-family: 'Mulish', sans-serif;
 display:none;
 
-@media ${device.tablet} {
+@media ${device.laptop} {
+  display:flex;
+  font-size: 1.4rem;
   }
 `

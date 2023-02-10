@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { device } from "../../assets/breackPoints";
 interface Props {
-    color: string
-    backgroundColor: string
+  color: string
+  backgroundColor: string
 }
 export const PostButton = styled.button<Props>`
  height: 40px;
@@ -23,6 +23,11 @@ export const PostButton = styled.button<Props>`
     font-size:2rem;
     height: 50px;
     width: 50px;
+  }
+  @media ${device.tablet} {
+    font-size:1.6rem;
+    height: 40px;
+    width: 40px;
   }
 
 `

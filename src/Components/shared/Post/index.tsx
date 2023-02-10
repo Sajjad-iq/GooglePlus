@@ -1,4 +1,3 @@
-import { UserLogo } from "../../../Components/common/UserLogo.styled"
 import { Row } from "../../../Components/shared/Row.styled"
 import { PostWrapper } from "./styled/PostWrapper.styled"
 import UserIcon from "../../../assets/ICONS/ProfileImg.jpg"
@@ -12,6 +11,7 @@ import { CommentsButton } from "./Comments"
 import { Share } from "./Share"
 import { UserName } from "../../common/UserName.styled"
 import { MouseEventHandler } from "react"
+import { UserLogo } from "../../common/UserLogo.styled"
 
 
 interface Props {
@@ -21,7 +21,7 @@ interface Props {
 export const Post = (props: Props) => {
 
     return (
-        <PostWrapper onClick={props.onClick}>
+        <PostWrapper >
             <Row padding="10px" align="space-between" width="100%">
                 <Row padding="0" align="center" width="auto">
                     <UserLogo src={UserIcon} alt="User Photo" />
@@ -31,7 +31,7 @@ export const Post = (props: Props) => {
                 <P>1h</P>
             </Row>
 
-            <PostBody>
+            <PostBody onClick={props.onClick}>
                 <Text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quibusdam, magnam, beatae modi accusamus quod fuga nihil vel cupiditate iste, harum eaque ipsam eius maiores. Nihil vitae repellat beatae facilis!</Text>
                 <PostImg loading={"lazy"} src={test} alt="post img" />
             </PostBody>

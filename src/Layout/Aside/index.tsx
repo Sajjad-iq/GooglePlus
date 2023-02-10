@@ -16,7 +16,7 @@ export const Aside = React.memo((props: Props) => {
         <AsideWrapper display={props.IsPageActive ? "flex" : "none"}>
 
             <Section border='1px solid rgb(211, 210, 210)'>
-                <NavButton CLass='' Name='Home' To='/' ICON={faHouse} />
+                <NavButton CLass='' Name='Home' To='/GooglePlus/' ICON={faHouse} />
                 <NavButton CLass='' Name='Profile' To='/Profile' ICON={faUser} />
                 <NavButton CLass='' Name='People' To='/People' ICON={faUsers} />
             </Section>

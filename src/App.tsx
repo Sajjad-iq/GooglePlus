@@ -24,7 +24,7 @@ function App() {
 
           right={
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/GooglePlus/" element={<Home />} />
             </Routes>
           }
           footer={<Footer />}
