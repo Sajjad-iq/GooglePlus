@@ -42,7 +42,7 @@ export const Post = (props: Props) => {
                 <Like />
 
                 <Row padding="0" align="center" width="auto">
-                    <CommentsButton />
+                    <CommentsButton onClick={props.onClick} />
                     <Share />
                 </Row>
             </Row>

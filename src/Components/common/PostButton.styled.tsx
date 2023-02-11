@@ -24,10 +24,11 @@ export const PostButton = styled.button<Props>`
     height: 50px;
     width: 50px;
   }
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     font-size:1.6rem;
     height: 40px;
     width: 40px;
+    padding:0;
   }
 
 `

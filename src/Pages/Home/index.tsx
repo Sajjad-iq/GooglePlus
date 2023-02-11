@@ -21,7 +21,7 @@ export const Home = () => {
 
             <PostToggleSection display={IsPostsActive ? "block" : "none"}>
                 < ResponsiveMasonry
-                    columnsCountBreakPoints={{ 768: 1, 1023: 2 }}
+                    columnsCountBreakPoints={{ 768: 1, 1023: 2, 1919: 3 }}
                 >
                     <Masonry >
                         <AddPostComponent IsActive={IsPostsActive} OpenFunction={Toggle} />
@@ -38,5 +38,3 @@ export const Home = () => {
 
     )
 }
-{/* 
- */}

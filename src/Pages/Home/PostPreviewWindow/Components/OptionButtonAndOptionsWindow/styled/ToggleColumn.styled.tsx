@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { device } from "../../../../assets/breackPoints";
-import { Colors } from "../../../../assets/Colors";
 interface Props {
   width: string
   align: string
@@ -14,14 +12,10 @@ export const ToggleColumn = styled.section<Props>`
  align-items: ${p => p.align};
  flex-direction: column;
  padding:${p => p.padding};
+ background-color: white;
+ position:absolute;
+ bottom: -85px;
+ left:-50px;
+ border: 1px solid gray;
 
- @media(${device.laptop}){
-    width:75%;
-    background-color: white ;
-    border:1px solid gray;
-  }
-
-  @media(${device.desktop}){
-    width:50%;
-  }
 `

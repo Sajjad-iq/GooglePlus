@@ -12,6 +12,7 @@ export const PostBody = styled.section`
  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   @media(${device.laptop}){
-    width: 85%;
+    width: 65%;
   }
+ 
  `
