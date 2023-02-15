@@ -9,7 +9,7 @@ import { NavButton } from '../../Components/shared/NavButton';
 export const Footer = React.memo(() => {
     return (
         <FooterWrapper>
-            <NavButton CLass='footer' Name='Home' To='/GooglePlus/' ICON={faHouse} />
+            <NavButton CLass='footer' Name='Home' To='/Home' ICON={faHouse} />
             <NavButton CLass='footer' Name='Profile' To='/Profile' ICON={faUser} />
             <NavButton CLass='footer' Name='People' To='/People' ICON={faUsers} />
             <NavButton CLass='footer' Name='Notifications' To='/Notifications' ICON={faBell} />

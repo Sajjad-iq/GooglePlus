@@ -10,6 +10,9 @@ import { SplitScreen } from "./Components/shared/splitScreen";
 import { Footer } from "./Layout/Footer";
 import { Home } from "./Pages/Home";
 import { ActiveToggle } from "./services/AddPostServices/PostsScreenToggle";
+import AuthContextProvider from "./Context/AuthContext";
+import { SignUp } from "./Pages/Auth/AuthPages/SignUp/Index";
+import { SignIn } from "./Pages/Auth/AuthPages/SignIn";
 
 function App() {
   const { IsPageActive, Toggle } = ActiveToggle()
@@ -18,17 +21,26 @@ function App() {
     <AppWrapper>
       <BrowserRouter>
 
+        <AuthContextProvider>
+          <Routes>
+            <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/SignIn" element={<SignIn />} />
+          </Routes>
+        </AuthContextProvider>
+
+
         <SplitScreen
           header={<Nav MenuButtonHandler={Toggle} />}
           left={<Aside IsPageActive={IsPageActive} />}
 
           right={
             <Routes>
-              <Route path="/GooglePlus/" element={<Home />} />
+              <Route path="/Home" element={<Home />} />
             </Routes>
           }
           footer={<Footer />}
         />
+
       </BrowserRouter >
     </AppWrapper>
   )

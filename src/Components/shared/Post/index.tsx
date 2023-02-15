@@ -17,6 +17,7 @@ import { UserLogo } from "../../common/UserLogo.styled"
 interface Props {
     onClick: MouseEventHandler<HTMLSelectElement>
     IsPostPreview: boolean
+    PostBody: string
 }
 
 export const Post = (props: Props) => {
@@ -33,7 +34,7 @@ export const Post = (props: Props) => {
             </Row>
 
             <PostBody onClick={props.onClick}>
-                <Text>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam quibusdam, magnam, beatae modi accusamus quod fuga nihil vel cupiditate iste, harum eaque ipsam eius maiores. Nihil vitae repellat beatae facilis!</Text>
+                <Text>{props.PostBody}</Text>
                 <PostImg loading={"lazy"} src={test} alt="post img" />
             </PostBody>
 

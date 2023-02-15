@@ -1,13 +1,9 @@
 import { AsideWrapper } from './styled/AsideWrapper'
 import { Section } from './styled/Section.styled'
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faUsers } from "@fortawesome/free-solid-svg-icons";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
-import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
+import { faHouse, faUser, faUsers, faGear, faTriangleExclamation, faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
 import React from 'react';
 import { NavButton } from '../../Components/shared/NavButton';
+
 interface Props {
     IsPageActive: boolean
 }
@@ -16,7 +12,7 @@ export const Aside = React.memo((props: Props) => {
         <AsideWrapper display={props.IsPageActive ? "flex" : "none"}>
 
             <Section border='1px solid rgb(211, 210, 210)'>
-                <NavButton CLass='' Name='Home' To='/GooglePlus/' ICON={faHouse} />
+                <NavButton CLass='' Name='Home' To='/Home' ICON={faHouse} />
                 <NavButton CLass='' Name='Profile' To='/Profile' ICON={faUser} />
                 <NavButton CLass='' Name='People' To='/People' ICON={faUsers} />
             </Section>

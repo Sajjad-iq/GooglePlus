@@ -1,4 +1,5 @@
-import { ReactNode } from 'react'
+import { ReactNode, useContext } from 'react'
+import { GlobalContext } from '../../../Context/GlobalContext'
 import { Footer } from './footer'
 import { Header } from './Header'
 import { LeftSide } from './LeftSide'
@@ -16,8 +17,10 @@ interface ChildrenType {
 
 export const SplitScreen = (children: ChildrenType) => {
 
+    const { IsUserSignIn } = useContext(GlobalContext)
+
     return (
-        <SplitWrapper>
+        <SplitWrapper style={{ display: IsUserSignIn ? "flex" : "none" }}>
 
             <Header>
                 {children.header}
