@@ -1,47 +1,42 @@
 import { AppWrapper } from "./AppWrapper"
-import { Aside } from "./Layout/Aside"
-import { Nav } from "./Layout/Nav"
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-import { SplitScreen } from "./Components/shared/splitScreen";
-import { Footer } from "./Layout/Footer";
-import { Home } from "./Pages/Home";
-import { ActiveToggle } from "./services/AddPostServices/PostsScreenToggle";
+import { Routes, Route } from "react-router-dom";
 import AuthContextProvider from "./Context/AuthContext";
 import { SignUp } from "./Pages/Auth/AuthPages/SignUp/Index";
 import { SignIn } from "./Pages/Auth/AuthPages/SignIn";
+import { Home } from "./Pages/Home";
+import { SplitScreen } from "./SplitScreen";
+import Profile from "./Pages/Profile";
+import { Settings } from "./Pages/Settengs";
+import { useEffect } from "react";
+import { SetUserInfoAndRedirect } from "./services/RefreshLogin/SetUserInfoAndRedirect";
 
 function App() {
-  const { IsPageActive, Toggle } = ActiveToggle()
+
+  const { IsUserSignIn, RefreshUserAccount } = SetUserInfoAndRedirect()
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [IsUserSignIn])
 
   return (
     <AppWrapper>
-      <BrowserRouter>
 
-        <AuthContextProvider>
-          <Routes>
-            <Route path="/SignUp" element={<SignUp />} />
-            <Route path="/SignIn" element={<SignIn />} />
-          </Routes>
-        </AuthContextProvider>
+      <AuthContextProvider>
+        <Routes>
 
+          <Route path="/" element={<SplitScreen />} >
+            <Route path="" element={<Home />} />
+            <Route path="/Profile" element={<Profile />} />
+          </Route>
+          <Route path="/Settings" element={<Settings />} />
 
-        <SplitScreen
-          header={<Nav MenuButtonHandler={Toggle} />}
-          left={<Aside IsPageActive={IsPageActive} />}
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/SignIn" element={<SignIn />} />
+        </Routes>
+      </AuthContextProvider>
 
-          right={
-            <Routes>
-              <Route path="/Home" element={<Home />} />
-            </Routes>
-          }
-          footer={<Footer />}
-        />
-
-      </BrowserRouter >
     </AppWrapper>
   )
 }

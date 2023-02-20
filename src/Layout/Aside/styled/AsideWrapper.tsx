@@ -15,6 +15,7 @@ export const AsideWrapper = styled.aside<Props>`
  border:1px solid gray;
  position: absolute;
  left:0;
+ z-index:5;
 
   @media ${device.tablet} {
      width: 300px;

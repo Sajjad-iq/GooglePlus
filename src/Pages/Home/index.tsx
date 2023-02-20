@@ -3,9 +3,9 @@ import { PostDisplayToggle } from "../../services/AddPostServices/PostDisplayTog
 import { ActiveToggle } from "../../services/AddPostServices/PostsScreenToggle"
 import { FetchPostsHandler } from "../../services/AddPostServices/FetchPosts"
 import { useEffect } from "react"
-import { PostPreviewWindow } from "./Components/PostPreviewWindow"
 import { PopUpAddPostWindow } from "./Components/PopUpAddPostWindow"
-import { Posts } from "./Components/Posts"
+import { Posts } from "../../Components/shared/Posts"
+import { PostPreviewWindow } from "../../Components/shared/PostPreviewWindow"
 
 
 export const Home = () => {
@@ -14,9 +14,6 @@ export const Home = () => {
     const { ActivePostsToggle, IsPostsActive } = PostDisplayToggle()
     const { FetchPosts, Response, Loading } = FetchPostsHandler()
 
-    useEffect(() => {
-        FetchPosts()
-    }, [IsPageActive])
 
     return (
 

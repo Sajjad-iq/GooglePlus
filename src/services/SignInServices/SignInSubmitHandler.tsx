@@ -7,34 +7,33 @@ import { useNavigate } from 'react-router-dom';
 export const SignInSubmitHandler = () => {
 
     const { SignInEmailInputValue, SignInPasswordInputValue, setSignInEmailAndPasswordValid } = useContext(AuthContext)
-    const { setIsUserSignIn } = useContext(GlobalContext)
+    const { setIsUserSignIn, IsUserSignIn } = useContext(GlobalContext)
     const Navigate = useNavigate()
 
 
     const SignInSubmit = async () => {
-        try {
-            await axios({
-                method: 'put',
-                url: "http://localhost:4000/SignIn",
-                headers: {},
-                data: {
-                    email: SignInEmailInputValue,
-                    password: SignInPasswordInputValue
+        if (SignInEmailInputValue !== "" && SignInPasswordInputValue !== "") {
+            try {
+                await axios({
+                    method: 'post',
+                    url: "http://localhost:4000/api/SignIn",
+                    headers: {},
+                    data: {
+                        Email: SignInEmailInputValue,
+                        Password: SignInPasswordInputValue
+                    }
                 }
+                ).then(res => {
+                    setIsUserSignIn(!IsUserSignIn)
+                    Navigate('/')
+                    localStorage.setItem('User', JSON.stringify(res.data.User) || "");
+                })
+            } catch (e) {
+                console.log(e)
+                setSignInEmailAndPasswordValid(false)
             }
-            ).then(res => {
-                if (res.data.isValid) {
-                    setSignInEmailAndPasswordValid(true)
-                    setIsUserSignIn(true)
-                    Navigate('/Home')
-                } else {
-                    setSignInEmailAndPasswordValid(false)
-                }
-            })
-        } catch (e) {
-            console.log(e)
-
         }
+
     }
     return SignInSubmit
 }

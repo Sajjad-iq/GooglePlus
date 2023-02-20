@@ -32,6 +32,9 @@ const AuthContextProvider = ({ children }: ProviderChildrenType) => {
     const [SignInPasswordInputValue, setSignInPasswordInputValue] = useState("")
     const [SignInEmailAndPasswordValid, setSignInEmailAndPasswordValid] = useState(true)
 
+    //signUpAllSectionsInputs
+    const [IsAllSectionsFilled, setIsAllSectionsFilled] = useState(true)
+
 
     const data = {
         EmailInputValue, setEmailInputValue,
@@ -45,7 +48,8 @@ const AuthContextProvider = ({ children }: ProviderChildrenType) => {
         IsConformPasswordValid, setIsConformPasswordValid,
         SignInEmailInputValue, setSignInEmailInputValue,
         SignInPasswordInputValue, setSignInPasswordInputValue,
-        SignInEmailAndPasswordValid, setSignInEmailAndPasswordValid
+        SignInEmailAndPasswordValid, setSignInEmailAndPasswordValid,
+        IsAllSectionsFilled, setIsAllSectionsFilled
     }
 
     return (

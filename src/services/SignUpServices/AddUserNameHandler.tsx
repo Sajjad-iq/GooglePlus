@@ -5,7 +5,6 @@ export const AddUserNameHandler = () => {
 
     const { IsUserNameValid, setIsUserNameValid, setUserNameInputValue } = useContext(AuthContext)
 
-
     const OnUserNameChange = (e: ChangeEvent<HTMLInputElement>) => {
         const Regex = /[^a-zA-Z1-9 \s]/g
         const Valid = Regex.test(e.target.value)

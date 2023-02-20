@@ -6,10 +6,10 @@ import { faBell } from "@fortawesome/free-solid-svg-icons";
 import React from 'react';
 import { NavButton } from '../../Components/shared/NavButton';
 
-export const Footer = React.memo(() => {
+export const FooterNav = React.memo(() => {
     return (
         <FooterWrapper>
-            <NavButton CLass='footer' Name='Home' To='/Home' ICON={faHouse} />
+            <NavButton CLass='footer' Name='Home' To='/' ICON={faHouse} />
             <NavButton CLass='footer' Name='Profile' To='/Profile' ICON={faUser} />
             <NavButton CLass='footer' Name='People' To='/People' ICON={faUsers} />
             <NavButton CLass='footer' Name='Notifications' To='/Notifications' ICON={faBell} />

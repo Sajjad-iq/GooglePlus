@@ -5,10 +5,10 @@ import { ProfileImageAndPostState } from "./Components/ProfileImageAndPostState"
 import { SendButton } from './Components/SendButton'
 import { TextArea } from "./Components/TextArea"
 import { Exit } from "./Components/Exit"
-import { AddImage } from "./Components/AddImage"
-import { Row } from "../PostPreviewWindow/Components/OptionButtonAndOptionsWindow/styled/Row.styled"
 import { AddPostFunction } from "../../../../services/AddPostServices/AddPostFunction"
 import { PostStatesAndSetStatesHandlers } from "../../../../services/AddPostServices/PostStatesAndSetStatesHandlers"
+import { Row } from "../../../../Components/shared/PostPreviewWindow/Components/OptionButtonAndOptionsWindow/styled/Row.styled"
+import { AddImage } from "../../../../Components/shared/AddImage"
 
 interface Props {
     Display: string

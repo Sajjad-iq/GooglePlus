@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { AuthContext } from '../../Context/AuthContext'
 import { useNavigate } from 'react-router-dom';
 
@@ -14,7 +14,8 @@ export const SignUpHandler = () => {
         IsFamilyNameValid,
         IsEmailValid,
         IsConformPasswordValid,
-        setIsEmailValid
+        setIsEmailValid,
+        setIsAllSectionsFilled
     } = useContext(AuthContext)
 
     const Navigate = useNavigate()
@@ -22,28 +23,28 @@ export const SignUpHandler = () => {
 
     const SignUpSubmit = async () => {
         if (IsUserNameValid && IsFamilyNameValid && IsEmailValid && IsConformPasswordValid) {
-            try {
-                await axios({
-                    method: 'post',
-                    url: "http://127.0.0.1:4000/SignUp",
-                    headers: {},
-                    data: {
-                        UserName: UserNameInputValue,
-                        FamilyName: FamilyNameInputValue,
-                        Email: EmailInputValue,
-                        password: UserPasswordInputValue,
+
+            if (UserNameInputValue !== "" && FamilyNameInputValue !== "" && EmailInputValue !== "" && UserPasswordInputValue !== "") {
+                try {
+                    await axios({
+                        method: 'post',
+                        url: "http://127.0.0.1:4000/api/SignUp",
+                        headers: {},
+                        data: {
+                            UserName: UserNameInputValue,
+                            FamilyName: FamilyNameInputValue,
+                            Email: EmailInputValue,
+                            Password: UserPasswordInputValue,
+                        }
                     }
+                    ).then(() => Navigate("/SignIn"))
+
+                } catch (e) {
+                    console.log(e)
+                    setIsEmailValid(false)
                 }
-                ).then((res => {
-                    if (res.data.IsComplied) {
-                        Navigate("/SignIn")
-                    } else {
-                        setIsEmailValid(false)
-                    }
-                }))
-            } catch (e) {
-                console.log(e)
-            }
+
+            } else setIsAllSectionsFilled(false)
         }
     }
 

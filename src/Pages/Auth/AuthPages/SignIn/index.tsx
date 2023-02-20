@@ -1,9 +1,9 @@
+import { SignInSection } from '../../../../Components/common/SignInSection.styled'
+import { SignInWrapper } from '../../../../Components/common/SignInWrapper.styled'
+import { Label } from '../../../../Components/shared/Label'
+import { AddEmailAndPassword } from '../../../../Components/shared/SginIn_addEmail_Password'
+import { SubmitSection } from '../../../../Components/shared/SubmitSection'
 import { SignInSubmitHandler } from '../../../../services/SignInServices/SignInSubmitHandler'
-import { Label } from '../../components/Label'
-import { AddEmailAndPassword } from '../../components/SginIn_addEmail_Password'
-import { SubmitSection } from '../../components/SubmitSection'
-import { SignInSection } from '../../styled/SignInSection.styled'
-import { SignInWrapper } from '../../styled/SignInWrapper.styled'
 
 export const SignIn = () => {
 

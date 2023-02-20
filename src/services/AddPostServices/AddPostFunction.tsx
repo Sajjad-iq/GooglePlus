@@ -6,10 +6,11 @@ export const AddPostFunction = (postBody: string, WindowClosing: any) => {
         try {
             await axios({
                 method: 'post',
-                url: "http://127.0.0.1:4000/Post",
+                url: "http://127.0.0.1:4000/Posts",
                 headers: {},
                 data: {
-                    PostBody: postBody,
+                    postBody: postBody,
+                    postOwner: postBody
                 }
             }
             )
