@@ -18,8 +18,18 @@ import { EditProfileCover } from './Components/EditProfileCover'
 
 
 export const Settings = () => {
+
     const { Save } = SaveChanges()
     const Navigate = useNavigate()
+
+    const LogOut = async () => {
+        let User = await JSON.parse(localStorage.getItem('User') || "");
+        User.Email = ""
+        User.Password = ""
+        localStorage.setItem('User', JSON.stringify(User) || "");
+        Navigate("/SignIn")
+
+    }
 
     return (
         <SettingsWrapper>
@@ -44,8 +54,10 @@ export const Settings = () => {
                 <EditThePassword />
             </Column>
 
-            <Row width='100%' padding='10px 0' align='flex-end'>
+            <Row width='100%' padding='10px 0' align='space-between'>
+                <CyanButton onClick={LogOut} >Log Out</CyanButton>
                 <CyanButton onClick={Save} >Save</CyanButton>
+
             </Row>
         </SettingsWrapper>
     )

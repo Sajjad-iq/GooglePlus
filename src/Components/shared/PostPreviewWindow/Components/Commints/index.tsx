@@ -1,14 +1,27 @@
-import UserImage from '../../../../../assets/ICONS/ProfileImg.jpg'
+import { useRef } from 'react'
+import Image from '../../../../../assets/ICONS/ProfileImg.jpg'
+import { AddCommentServices } from '../../../../../services/PostsServices/AddCommentServices'
+import { AddComment } from '../../../AddComment'
 import { SingleComment } from '../../../SingleCommint'
 import { Column } from './Column.styled'
 
-export const PostComments = () => {
+interface Props {
+    Response: { Comments: [] }
+}
+
+export const PostComments = (props: Props) => {
+    let User = JSON.parse(localStorage.getItem('User') || "");
+    const Ref = useRef<any>(null)
+    const RestTextFelidValueReload = () => Ref ? Ref.current.value = "" : ""
+    const { onChange, CommentSubmitHandler } = AddCommentServices(RestTextFelidValueReload)
+
+
     return (
         <Column width='100%' align='center' padding='unset'>
-            <SingleComment UserImage={UserImage} UserName='User Name' CommentBody='This is just for testing' />
-            <SingleComment UserImage={UserImage} UserName='User Name' CommentBody='This is just for testing' />
-            <SingleComment UserImage={UserImage} UserName='User Name' CommentBody='This is just for testing' />
-            <SingleComment UserImage={UserImage} UserName='User Name' CommentBody='This is just for testing' />
+            {props.Response.Comments.map((e: any, i: number) => {
+                return <SingleComment CreatedAt={e.createdAt} key={i} UserImage={e.CommentOwnerImage !== "" ? e.CommentOwnerImage : Image} UserName={e.CommentOwnerName} CommentBody={e.CommentBody} />
+            })}
+            <AddComment Ref={Ref} UserImage={User.ProfilePicture !== "" ? User.ProfilePicture : Image} onSubmit={() => CommentSubmitHandler(props.Response)} onChange={onChange} />
         </Column>
     )
 }

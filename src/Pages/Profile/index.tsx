@@ -4,17 +4,22 @@ import CoverIMG from "../../assets/ICONS/Photos/marguerite-729510__340.jpg"
 import UserIMG from "../../assets/ICONS/ProfileImg.jpg"
 import { UserInfo } from "../../Components/shared/UserInfo"
 import { Posts } from "../../Components/shared/Posts"
-import { FetchPostsHandler } from "../../services/AddPostServices/FetchPosts"
-import { PostDisplayToggle } from "../../services/AddPostServices/PostDisplayToggle"
-import { PostPreviewWindow } from "../../Components/shared/PostPreviewWindow"
 import { useNavigate } from "react-router-dom"
+import { PreviewThePost } from "../../services/PostsServices/PreviewThePost"
+import { useEffect } from "react"
+import { FetchProfilePosts } from "../../services/PostsServices/FetchProfilePosts"
 
 function Profile() {
+
     let User = JSON.parse(localStorage.getItem('User') || "");
-    const { ActivePostsToggle, IsPostsActive } = PostDisplayToggle()
-    const { FetchPosts, Response, Loading } = FetchPostsHandler()
+    const { onClickOnPost } = PreviewThePost()
+    const { FetchProfilePostsHandler, Loading, Response } = FetchProfilePosts()
     const Navigate = useNavigate()
 
+
+    useEffect(() => {
+        FetchProfilePostsHandler()
+    }, [])
 
     return (
         <Wrapper>
@@ -26,16 +31,12 @@ function Profile() {
                 ProfileButtonClick={() => Navigate("/Settings")}
                 ProfileButtonName={"Edit Profile"}
             />
-            <PostPreviewWindow
-                IsActive={IsPostsActive}
-                BackHandler={ActivePostsToggle}
-            />
             <Posts
-                IsPostsActive={false}
-                Toggle={() => ""}
+                IsForProfile={true}
+                ToggleAddPostComponent={() => ""}
                 Loading={Loading}
                 Response={Response}
-                ActivePostsToggle={ActivePostsToggle}
+                OnClickOnPost={onClickOnPost}
             />
         </Wrapper>
     )

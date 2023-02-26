@@ -12,11 +12,13 @@ interface Props {
 }
 
 export const AddPostComponent = (props: Props) => {
+    let User = JSON.parse(localStorage.getItem('User') || "");
+
     return (
         <ToggleRow display={props.IsActive ? "flex" : "none"} width="100%" align="space-between" padding="10px">
 
             <Row padding="0" width="80%" align="flex-start">
-                <UserLogo src={UserIcon} alt="user" />
+                <UserLogo src={User.ProfilePicture === "" ? UserIcon : User.ProfilePicture} alt="user" />
                 <PostInputComponent onFocus={props.OpenFunction} />
             </Row>
 

@@ -1,31 +1,33 @@
 import { Wrapper } from "../../Components/shared/Wrapper"
-import { PostDisplayToggle } from "../../services/AddPostServices/PostDisplayToggle"
-import { ActiveToggle } from "../../services/AddPostServices/PostsScreenToggle"
-import { FetchPostsHandler } from "../../services/AddPostServices/FetchPosts"
-import { useEffect } from "react"
+import { ActiveToggle } from "../../services/PostsServices/PostsScreenToggle"
+import { FetchPostsHandler } from "../../services/PostsServices/FetchPosts"
+import { useContext, useEffect } from "react"
 import { PopUpAddPostWindow } from "./Components/PopUpAddPostWindow"
 import { Posts } from "../../Components/shared/Posts"
-import { PostPreviewWindow } from "../../Components/shared/PostPreviewWindow"
-
-
+import { PreviewThePost } from "../../services/PostsServices/PreviewThePost"
+import { GlobalContext } from "../../Context/GlobalContext"
 export const Home = () => {
 
     const { IsPageActive, Toggle } = ActiveToggle()
-    const { ActivePostsToggle, IsPostsActive } = PostDisplayToggle()
-    const { FetchPosts, Response, Loading } = FetchPostsHandler()
+    const { onClickOnPost } = PreviewThePost()
+    const { FetchPosts, Loading, Response } = FetchPostsHandler()
+    const { HomeReFresh } = useContext(GlobalContext)
 
+
+    useEffect(() => {
+        FetchPosts()
+    }, [HomeReFresh])
 
     return (
 
         <Wrapper>
             <PopUpAddPostWindow CloseFunction={Toggle} Display={IsPageActive ? "flex" : "none"} />
-            <PostPreviewWindow BackHandler={ActivePostsToggle} IsActive={IsPostsActive} />
             <Posts
-                IsPostsActive={IsPostsActive}
-                Toggle={Toggle}
+                IsForProfile={false}
+                ToggleAddPostComponent={Toggle}
                 Loading={Loading}
                 Response={Response}
-                ActivePostsToggle={ActivePostsToggle}
+                OnClickOnPost={onClickOnPost}
             />
         </Wrapper>
 

@@ -7,12 +7,14 @@ import { Row } from "../../../../../../Components/shared/PostPreviewWindow/Compo
 import { Column } from "../../../../../../Components/shared/PostPreviewWindow/Components/Commints/Column.styled"
 
 export const ProfileImageAndPostState = () => {
+    let User = JSON.parse(localStorage.getItem('User') || "");
+
     return (
         <Row padding="0" align="center" width="auto">
-            <UserLogo src={UserIcon} alt="User Photo" />
+            <UserLogo src={User.ProfilePicture == "" ? UserIcon : User.ProfilePicture} alt="User Photo" />
 
             <Column padding="0" align="flex-start" width="auto">
-                <UserName IsCommentUserName={false}>User Name</UserName>
+                <UserName IsCommentUserName={false}>{`${User.UserName} ${User.FamilyName}`}</UserName>
                 <PostStateSelectors />
             </Column>
         </Row>

@@ -4,7 +4,7 @@ import { GlobalContext } from '../Context/GlobalContext'
 import { Aside } from '../Layout/Aside'
 import { FooterNav } from '../Layout/Footer'
 import { Nav } from '../Layout/Nav'
-import { ActiveToggle } from '../services/AddPostServices/PostsScreenToggle'
+import { ActiveToggle } from '../services/PostsServices/PostsScreenToggle'
 
 import { Footer } from './styled/footer'
 import { Header } from './styled/Header'

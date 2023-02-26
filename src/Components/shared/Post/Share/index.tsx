@@ -15,7 +15,7 @@ export const Share = () => {
                 <FontAwesomeIcon className='fa-Post-icon' icon={faShareNodes} />
             </PostButton>
 
-            <Count>1</Count>
+            <Count>0</Count>
         </Row>
     )
 }

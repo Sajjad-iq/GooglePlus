@@ -1,49 +1,66 @@
-import { Row } from "../../../Components/shared/Row.styled"
+import { Row } from "../Row.styled"
 import { PostWrapper } from "./styled/PostWrapper.styled"
-import UserIcon from "../../../assets/ICONS/ProfileImg.jpg"
 import { P } from "./styled/P.styled"
 import { PostBody } from "./styled/PostBody.styled"
 import { Text } from "./styled/Text.styled"
 import { PostImg } from "./styled/PostImg.styled"
-import test from "../../../assets/ICONS/Photos/marguerite-729510__340.jpg"
 import { Like } from "./Like"
 import { CommentsButton } from "./Comments"
 import { Share } from "./Share"
 import { UserName } from "../../common/UserName.styled"
-import { MouseEventHandler } from "react"
 import { UserLogo } from "../../common/UserLogo.styled"
 
 
 interface Props {
-    onClick: MouseEventHandler<HTMLSelectElement>
-    IsPostPreview: boolean
+    onClick: any
     PostBody: string
+    PostImage: string
+    LikesCount: number
+    CommentsCount: number
+    onHitLike: any
+    PostOwnerName: string
+    IsUserHitLike: boolean,
+    PostOwnerImage: string
+    IsForPreviewWindow: boolean
+    CreatedAt: string
 }
 
 export const Post = (props: Props) => {
 
+    const DateCalculator = () => {
+        var CreatedAt = new Date(props.CreatedAt);
+        var NowDate = new Date(Date.now());
+        var Difference = NowDate.getTime() - CreatedAt.getTime();
+        var Difference_In_Days = Difference / (1000 * 3600 * 24);
+        var Difference_In_Hours = Difference / (1000 * 3600);
+        var Difference_In_Minutes = Difference / (1000 * 60);
+
+        if (Difference_In_Minutes < 60) return `${Difference_In_Minutes.toFixed()} min`
+        else if (Difference_In_Hours < 24 && Difference_In_Minutes > 60) return `${Difference_In_Hours.toFixed()} hour`
+        else return `${Difference_In_Days.toFixed()} day`
+    }
     return (
-        <PostWrapper IsPostPreview={props.IsPostPreview}>
+        <PostWrapper IsForPreview={props.IsForPreviewWindow}>
             <Row padding="10px" align="space-between" width="100%">
                 <Row padding="0" align="center" width="auto">
-                    <UserLogo src={UserIcon} alt="User Photo" />
-                    <UserName IsCommentUserName={false}>User Name</UserName>
+                    <UserLogo src={props.PostOwnerImage} alt="User Photo" />
+                    <UserName IsCommentUserName={false}>{props.PostOwnerName}</UserName>
                     <P>Public</P>
                 </Row>
-                <P>1h</P>
+                <P>{DateCalculator()}</P>
             </Row>
 
             <PostBody onClick={props.onClick}>
                 <Text>{props.PostBody}</Text>
-                <PostImg loading={"lazy"} src={test} alt="post img" />
+                <PostImg loading={"lazy"} src={props.PostImage} />
             </PostBody>
 
             <Row padding="10px" align="space-between" width="100%">
 
-                <Like />
+                <Like IsUserHitLike={props.IsUserHitLike} onHitLike={props.onHitLike} LikesCount={props.LikesCount} />
 
                 <Row padding="0" align="center" width="auto">
-                    <CommentsButton onClick={props.onClick} />
+                    <CommentsButton CommentsCount={props.CommentsCount} onClick={props.onClick} />
                     <Share />
                 </Row>
             </Row>

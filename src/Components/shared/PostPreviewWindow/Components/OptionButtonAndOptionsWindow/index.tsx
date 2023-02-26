@@ -6,14 +6,18 @@ import { OptionsWindow } from './OptionsWindow'
 import { useState } from 'react'
 import { Button } from '../../../../common/Button.styled'
 
-export const OptionButtonAndOptionsWindow = () => {
-    const [IsActive, setIsActive] = useState(false)
+interface Props {
+    Data: {}
+}
+export const OptionButtonAndOptionsWindow = (props: Props) => {
+    const [IsActive, setIsActive] = useState(true)
+
     return (
         <Row width='fit-content' align='flex-start' padding='10px'>
             <Button onClick={() => setIsActive(!IsActive)}>
                 <FontAwesomeIcon className='post-fa-icon' icon={faEllipsisVertical} />
             </Button>
-            <OptionsWindow IsActive={IsActive} />
+            <OptionsWindow data={props.Data} IsActive={IsActive} />
         </Row>
     )
 }

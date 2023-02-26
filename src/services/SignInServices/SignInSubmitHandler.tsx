@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 export const SignInSubmitHandler = () => {
 
     const { SignInEmailInputValue, SignInPasswordInputValue, setSignInEmailAndPasswordValid } = useContext(AuthContext)
-    const { setIsUserSignIn, IsUserSignIn } = useContext(GlobalContext)
     const Navigate = useNavigate()
 
 
@@ -24,7 +23,6 @@ export const SignInSubmitHandler = () => {
                     }
                 }
                 ).then(res => {
-                    setIsUserSignIn(!IsUserSignIn)
                     Navigate('/')
                     localStorage.setItem('User', JSON.stringify(res.data.User) || "");
                 })

@@ -9,7 +9,7 @@ export const SplitWrapper = styled.section`
  flex-direction: column;
  position: relative;
  padding-top:57px;
- padding-bottom:55px;
+ padding-bottom:60px;
  background-color:${Colors.Primary.white} ;
 
   @media ${device.tablet} {

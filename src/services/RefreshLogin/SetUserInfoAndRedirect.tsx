@@ -5,7 +5,7 @@ import { GlobalContext } from '../../Context/GlobalContext'
 
 export const SetUserInfoAndRedirect = () => {
 
-    const { IsUserSignIn, setIsUserSignIn, setUser } = useContext(GlobalContext)
+    const { IsUserSignIn, setIsUserSignIn } = useContext(GlobalContext)
     const Navigate = useNavigate()
     let User = JSON.parse(localStorage.getItem('User') || "");
 

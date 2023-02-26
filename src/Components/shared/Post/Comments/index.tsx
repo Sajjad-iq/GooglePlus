@@ -9,7 +9,9 @@ import { MouseEventHandler } from 'react';
 
 interface Props {
     onClick: MouseEventHandler
+    CommentsCount: number
 }
+
 export const CommentsButton = (props: Props) => {
     return (
         <Row padding='5px' width='auto' align='center'>
@@ -21,7 +23,7 @@ export const CommentsButton = (props: Props) => {
                 <FontAwesomeIcon className='fa-Post-icon' icon={faMessage} />
             </PostButton>
 
-            <Count>1</Count>
+            <Count>{props.CommentsCount}</Count>
         </Row>
     )
 }
